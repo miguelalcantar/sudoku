@@ -3,7 +3,7 @@
 
 The solution consists of iterating over the length of the sudoku game, which is 9.
 
-On every iteration it validates the i'th row, column and box, which is the 3 by 3 box.
+On every iteration it validates the *i'th* **row**, **column** and **box**, which is the 3 by 3 box.
 
 For rows and columns is quite simple: it just finds out whether the line contains 0's or if, after converting it into a set, its size is 9. Due the nature of sets, if there is any repeated number it will only counted once, so that the lenght would be cut.
 
