@@ -14,7 +14,8 @@ My initial question was: how do we pick one by one medium box?
 
 Let's just try it out on Python shell:
 
->>> sudoku = [
+sudoku = [
+
      [5, 3, 4, 6, 7, 8, 9, 1, 2],
      [6, 7, 2, 1, 9, 5, 3, 4, 8],
      [1, 9, 8, 3, 4, 2, 5, 6, 7],
@@ -24,21 +25,26 @@ Let's just try it out on Python shell:
      [9, 6, 1, 5, 3, 7, 2, 8, 4],
      [2, 8, 7, 4, 1, 9, 6, 3, 5],
      [3, 4, 5, 2, 8, 6, 1, 7, 9]
+     
    ]
    
 Picking the box at the upper left side, which is:
-[5, 3, 4]
-[6, 7, 2]
-[1, 9, 8]
+
+     [5, 3, 4]
+     [6, 7, 2]
+     [1, 9, 8]
 
 With Python would be:
 
 >>> sudoku[0:3][0][0:3]
-[5, 3, 4]
+     
+     [5, 3, 4]
 >>> sudoku[0:3][1][0:3]
-[6, 7, 2]
+
+     [6, 7, 2]
 >>> sudoku[0:3][2][0:3]
-[1, 9, 8]
+
+     [1, 9, 8]
 
 Here we can just generalize it in the following way:
 
@@ -46,17 +52,19 @@ Here we can just generalize it in the following way:
 [[5, 3, 4], [6, 7, 2], [1, 9, 8]]
 
 Obtaining the second box:
-[6, 7, 8]
-[1, 9, 5]
-[3, 4, 2]
+
+     [6, 7, 8]
+     [1, 9, 5]
+     [3, 4, 2]
 
 >>> [sudoku[0:3][i][3:6] for i in range(3)]
 [[6, 7, 8], [1, 9, 5], [3, 4, 2]]
 
 And the forth box:
-[8, 5, 9]
-[4, 2, 6]
-[7, 1, 3]
+
+     [8, 5, 9]
+     [4, 2, 6]
+     [7, 1, 3]
 
 >>> [sudoku[3:6][i][0:3] for i in range(3)]
 [[8, 5, 9], [4, 2, 6], [7, 1, 3]]
